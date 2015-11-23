@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="ThemeHouse_FloodControl" title="[⌂] Flood Control Permissions" version_string="1.0.0" version_id="1447261019" url="http://xf.themehouse.io/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="controller_pre_dispatch" execute_order="10" callback_class="ThemeHouse_FloodControl_Listener_ControllerPreDispatch" callback_method="controllerPreDispatch" active="1" hint="" description=""/>
+    <listener event_id="file_health_check" execute_order="10" callback_class="ThemeHouse_FloodControl_Listener_FileHealthCheck" callback_method="fileHealthCheck" active="1" hint="" description=""/>
+    <listener event_id="load_class_controller" execute_order="10" callback_class="ThemeHouse_FloodControl_Listener_LoadClass" callback_method="loadClassController" active="1" hint="" description=""/>
+    <listener event_id="load_class_model" execute_order="10" callback_class="ThemeHouse_FloodControl_Listener_LoadClass" callback_method="loadClassModel" active="1" hint="" description=""/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions>
+      <permission permission_group_id="conversation" permission_id="floodCheckLength" permission_type="integer" default_value_int="0" interface_group_id="conversationPermissions" display_order="200"/>
+      <permission permission_group_id="general" permission_id="floodCheckContactLength" permission_type="integer" default_value_int="0" interface_group_id="generalPermissions" display_order="12000"/>
+      <permission permission_group_id="general" permission_id="floodCheckPostLength" permission_type="integer" default_value_int="0" interface_group_id="generalPermissions" display_order="10000"/>
+      <permission permission_group_id="general" permission_id="floodCheckReportLength" permission_type="integer" default_value_int="0" interface_group_id="generalPermissions" display_order="11000"/>
+    </permissions>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="permission_conversation_floodCheckLength" version_id="0" version_string="1.0.0"><![CDATA[Minimum time between contact us forms (seconds)]]></phrase>
+    <phrase title="permission_general_floodCheckContactLength" version_id="0" version_string="1.0.0"><![CDATA[Minimum time between contact us forms (seconds)]]></phrase>
+    <phrase title="permission_general_floodCheckPostLength" version_id="0" version_string="1.0.0"><![CDATA[Minimum time between posts (seconds)]]></phrase>
+    <phrase title="permission_general_floodCheckReportLength" version_id="0" version_string="1.0.0"><![CDATA[Minimum time between reports (seconds)]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+  <public_template_modifications>
+    <modification template="footer" modification_key="th_copyrightNotice_floodControl" description="Copyright notice for [⌂] Flood Control Permissions" execution_order="1" enabled="1" action="callback">
+      <find><![CDATA[/{xen:phrase (?:xenforo|extra)_copyright}/]]></find>
+      <replace><![CDATA[ThemeHouse_Listener_InitDependencies::copyrightNotice]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
